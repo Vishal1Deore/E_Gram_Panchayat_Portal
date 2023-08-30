@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.User;
+import com.example.demo.model.Village;
 import com.example.demo.service.MyService;
 
 @RestController
@@ -19,6 +20,11 @@ public class MyController {
 	@Autowired
 	MyService service;
 	
+	@PostMapping("addvillageData")
+	public boolean addvillageData(@RequestBody Village village) {
+		return service.addvillageDataInDb(village);
+	}
+		
 	@PostMapping("register")
 	public boolean register(@RequestBody User user) {
 		return service.storeUserInDataBase(user);

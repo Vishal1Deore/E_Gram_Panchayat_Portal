@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.demo.model.User;
+import com.example.demo.model.Village;
 import com.example.demo.repository.UserRepo;
+import com.example.demo.repository.VilllageRepo;
 import com.example.demo.service.MyService;
 
 @Component
@@ -17,6 +19,21 @@ public class MyServiceImplementation implements MyService {
 	
 	@Autowired 
 	UserRepo userRepo;
+	@Autowired
+	VilllageRepo villageRepo;
+	
+	@Override
+	public boolean addvillageDataInDb(Village village) {
+		try {
+			villageRepo.save(village); 
+			return true;
+			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		return false;
+		}
+	}
 	
 	
 	@Override
@@ -48,6 +65,8 @@ public class MyServiceImplementation implements MyService {
 		}
 		
 	}
+
+
 
 	
 
