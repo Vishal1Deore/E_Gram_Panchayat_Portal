@@ -1,0 +1,33 @@
+<!-- <button (click)="login(1)">Login</button>
+<button (click)="register(2)">Registration</button>
+<app-userlogin *ngIf="whatToShow==1"></app-userlogin>
+<app-userregistration *ngIf="whatToShow==2"></app-userregistration> -->
+
+<div *ngIf="isloginsuccess==0">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-brand brn btn-info"
+      type="button"
+      (click)="btnShow(1)"
+    >
+      Login
+    </button>
+    <button
+      class="navbar-brand brn btn-info"
+      type="button"
+      (click)="btnShow(2)"
+    >
+      Sign Up
+    </button>
+  </nav>
+
+
+<div>
+  <app-userlogin *ngIf="whatToShow==1"></app-userlogin>
+  <app-userregistration *ngIf="whatToShow==2"></app-userregistration>
+</div>
+</div>
+<div *ngIf="isloginsuccess==1">lavya</div>
+<div *ngIf="isloginsuccess==2">gandu</div>
+<div *ngIf="isloginsuccess==3">zamya</div>
