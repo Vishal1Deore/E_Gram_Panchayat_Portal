@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SuperadmindashboardComponent } from './superadmindashboard/superadmindashboard.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,14 @@ import { UserdashboardComponent } from './userdashboard/userdashboard.component'
     UserdashboardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
+  ],
+  exports :[
+    SuperadmindashboardComponent,
+    AdmindashboardComponent,
+    UserdashboardComponent
+
   ]
 })
 export class DashboardModule { }
