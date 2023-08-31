@@ -1,1 +1,31 @@
-<p>superadmindashboard works!</p>
+<button (click)="getDataOfuser()" (click)="show(1)">UnverifiedUser</button>
+<button (click)="show(2)">AddVillage</button>
+
+<table border="1px solid black" *ngIf="whatToShow==1">
+  <tr>
+    <td>SN</td>
+    <td>FullName</td>
+    <td>MobNumber</td>
+    <td>RegistrationDate</td>
+    <td>action</td>
+  </tr>
+
+  <tr *ngFor="let user of allUnverifieduser ;let i=index">
+    <td>{{i+1}}</td>
+    <td>{{user.fullname}}</td>
+    <td>{{ user.mobNum }}</td>
+    <td>{{ user.registrationDate | date:'medium'  }}</td>
+
+    <td>
+          <button>verify</button>
+          <button>reject</button>
+    </td>
+  </tr>
+</table>
+<div *ngIf="whatToShow==2">
+  village Name:<br />
+  <input type="text" [(ngModel)]="village.villageName" /><br />
+  pincode:<br />
+  <input type="text" [(ngModel)]="village.pincode" /><br />
+  <button (click)="addVillage()">addVillage</button>
+</div>

@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +22,15 @@ public class MyController {
 	@Autowired
 	MyService service;
 	
+	@GetMapping("getvillageData")
+	public List<Village> getvillageData(){
+		return service.getAllVillage();
+	}
+	
+	@GetMapping("getunverifieduserData")
+	public List<User> getunverifieduserData(){
+		return service.getunverifiedUser();
+	}
 	@PostMapping("addvillageData")
 	public boolean addvillageData(@RequestBody Village village) {
 		return service.addvillageDataInDb(village);

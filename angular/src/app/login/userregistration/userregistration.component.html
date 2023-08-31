@@ -32,6 +32,16 @@
           <input  [(ngModel)]="registerUser.mobNum" type="number" class="form-control" placeholder="Mobile Number" />
         </div>
         <div class="form-group col-md-6">
+        Village Name: <br>
+        <select>
+          <option>---select---</option>
+          <option *ngFor="let village of allvillageData">
+            {{village.villageName}}
+
+          </option>
+        </select>
+        </div>
+        <div class="form-group col-md-6">
           <button (click)=" userRegister()" type="submit" class="btn btn-primary">Sign in</button>
         </div>
       </div>

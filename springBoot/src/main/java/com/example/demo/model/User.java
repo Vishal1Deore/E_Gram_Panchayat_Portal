@@ -22,5 +22,8 @@ public class User {
 	Date registrationDate;
 	int userRole;
 	double mobNum;
+	int isUserVerified;
+	
+
 
 }
